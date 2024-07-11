@@ -1,0 +1,10 @@
+File: rank2/standard_b.g
+The braiding is:
+[ [ E(3), x^-1 ], [ 1, x ] ]
+Longest word:
+[ 1, 2, 1, 2 ]
+Positive roots (4):
+[ [ 1, 0 ], [ 2, 1 ], [ 1, 1 ], [ 0, 1 ] ]
+Cartan roots (2):
+[ [ 2, 1 ], [ 0, 1 ] ]
+--

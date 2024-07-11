@@ -1,0 +1,11 @@
+File: rank2/ufo9b.g
+The braiding is:
+[ [       E(4),      E(24) ],
+  [          1,  -E(24)^11 ] ]
+Longest word:
+[ 1, 2, 1, 2, 1, 2, 1, 2 ]
+Positive roots (8):
+[ [ 1, 0 ], [ 3, 1 ], [ 5, 2 ], [ 2, 1 ], [ 5, 3 ], [ 3, 2 ], [ 1, 1 ], [ 0, 1 ] ]
+Cartan roots (2):
+[ [ 2, 1 ], [ 0, 1 ] ]
+--
