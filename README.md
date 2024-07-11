@@ -1,4 +1,4 @@
-# Computing finite Weyl gropoids
+# Computing finite Weyl groupoids
 
 The repository contains the code corresponding to the paper
 
