@@ -22,8 +22,8 @@ rank7/
 rank8/
 ```
 There also logfiles are saved.  To obtain the data corresponding, say, to 
-tank two braidings, one uses the file ```rank2.g```. Similarly, 
-there are scripts for generating data for other ranks. 
+rank two braidings, one needs to use the file ```rank2.g```. Similarly, 
+there are scripts for generating data for other ranks up to eight.  
 
 ## Rank two examples
 
