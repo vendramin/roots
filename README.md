@@ -39,7 +39,7 @@ of positive roots.
 
 ### Example:
 In this example, we compute the set of positive roots
-of the root system of type ufo(7)a. 
+of the root system of type $\mathfrak{ufo}(7)_a$. 
 
 ```
 gap> Read("roots.g");
@@ -67,6 +67,7 @@ roots, the dimension and the defining relations of the corresponding Nichols
 algebra.
 
 ### Example:
+In this example, we compute the defining relations of $\mathfrak{ufo}(7)_a$:
 ```
 gap> Read("relations.g");
 gap> print_relations("rank2/ufo7a.g");
@@ -94,7 +95,7 @@ Once the set of positive roots is computed, the script computes
 the set of Lyndon words and the hyperwords. 
 
 ### Example: 
-
+We now compute the Lyndon words of $\mathfrak{ufo}(7)_a$.
 ```
 gap> Read("lyndon.g");
 gap> lyndon("rank2/ufo7a.g");
@@ -114,6 +115,7 @@ rec( decompositions := [ 0, 0, [ [ [ 1 ], [ 2 ] ] ], [ [ [ 1 ], [ 1, 2 ] ] ],
   words := [ [ 2 ], [ 1 ], [ 1, 2 ], [ 1, 1, 2 ], [ 1, 1, 1, 2 ] ] )
 ```
 ### Example: 
+Finally, we compute the hyperwords of $\mathfrak{ufo}(7)_a$:
 ```
 gap> hyperwords("rank2/ufo7a.g");
 #I  not logging
