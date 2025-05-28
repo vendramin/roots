@@ -4,6 +4,7 @@ Folders
 The follopwing folders contain all the exceptional braidings of diagonal type
 (that is neither Cartan nor super type): 
 
+```
 rank2/
 rank3/ 
 rank4/
@@ -11,12 +12,15 @@ rank5/
 rank6/
 rank7/
 rank8/
+```
 
 The following folders contain some exceptional 
 contragradient data of finite-dimensional Lie superalgebras:
 
+```
 super_char3/
 super_char5/
+```
 
 Files
 =====
@@ -27,10 +31,11 @@ This is the main script. It determines whether a root system of a given
 braiding of diagonal type is finite. In this case, the script computes the set
 of positive roots. 
 
-Example:
+### Example:
 In this example, we compute the set of positive roots
 of the root system of type ufo(7)a. 
 
+```
 gap> Read("roots.g");
 gap> roots("rank2/ufo7a.g");
 #I  not logging
@@ -44,7 +49,7 @@ Positive roots (5):
 [ [ 1, 0 ], [ 3, 1 ], [ 2, 1 ], [ 1, 1 ], [ 0, 1 ] ]
 Cartan roots (0):
 [  ]
-
+```
 Similarly, the script can be used with any of the files in the folder mentioned
 above, or with any other braiding matrix (in which case, you need to create a
 file containing the corresponding braiding matrix).
@@ -55,8 +60,8 @@ Once the set of positive roots is computed, the script computes the Cartan
 roots, the dimension and the defining relations of the corresponding Nichols
 algebra.
 
-Example:
-
+### Example:
+```
 gap> Read("relations.g");
 gap> print_relations("rank2/ufo7a.g");
 #I  not logging
@@ -76,14 +81,15 @@ x_{1}^{4}
 x_{2}^{2}
 [x_{1\,1\,2},x_{1\,2}]_c
 [x_{1},x_{3\alpha_{1}+2\alpha_{2}}]_c-(0)x_{1\,1\,2}^2
-
+```
 lyndon.g
 -------
 Once the set of positive roots is computed, the script computes
 the set of Lyndon words and the hyperwords. 
 
-Example: 
+### Example: 
 
+```
 gap> Read("lyndon.g");
 gap> lyndon("rank2/ufo7a.g");
 #I  not logging
@@ -100,9 +106,9 @@ Cartan roots (0):
 rec( decompositions := [ 0, 0, [ [ [ 1 ], [ 2 ] ] ], [ [ [ 1 ], [ 1, 2 ] ] ],
       [ [ [ 1 ], [ 1, 1, 2 ] ] ] ], ordering := [ 5, 1, 4, 3, 2 ],
   words := [ [ 2 ], [ 1 ], [ 1, 2 ], [ 1, 1, 2 ], [ 1, 1, 1, 2 ] ] )
-
-Example: 
-
+```
+### Example: 
+```
 gap> hyperwords("rank2/ufo7a.g");
 #I  not logging
 File: rank2/ufo7a.g
@@ -120,15 +126,15 @@ x_{\alpha_{1}}=x_{1}
 x_{[ 1, 1 ]}=[x_{[ 1, 0 ]},x_{[ 0, 1 ]}]_c
 x_{[ 2, 1 ]}=[x_{[ 1, 0 ]},x_{[ 1, 1 ]}]_c
 x_{[ 3, 1 ]}=[x_{[ 1, 0 ]},x_{[ 2, 1 ]}]_c
-
+```
 super.g
 -------
 This script determines whether a root system of a given congragradient Lie
 superalgebra is finite. In this case, the script computes the set of positive
 roots, the odd roots and the super dimension. 
 
-Example: 
-
+### Example: 
+```
 gap> Read("super.g");
 gap> super("super_char3/g23.g");
 The parity is: [ -1, -1, -1 ]
@@ -149,9 +155,9 @@ The set Nabla+ is:
 [ [ 0, 0, 1 ], [ 0, 1, 0 ], [ 0, 1, 1 ], [ 0, 2, 0 ], [ 0, 2, 1 ], [ 1, 0, 0 ], [ 1, 1, 0 ], [ 1, 1, 1 ],
   [ 1, 2, 0 ], [ 1, 2, 1 ], [ 1, 3, 1 ] ]
 Super-dimension of the contragradient Lie superalgebra g(B,p): (12|14)
-
-Example:
-
+```
+### Example:
+```
 gap> Read("super.g");
 gap> super("super_char5/brown25.g");
 The parity is: [ 1, -1 ]
@@ -169,5 +175,5 @@ Odd nondegenerate (2):
 The set Nabla+ is:
 [ [ 0, 1 ], [ 1, 0 ], [ 1, 1 ], [ 2, 1 ], [ 2, 2 ], [ 3, 1 ], [ 3, 2 ], [ 4, 2 ], [ 4, 3 ], [ 5, 3 ] ]
 Super-dimension of the contragradient Lie superalgebra g(B,p): (10|12)
-
+```
 
