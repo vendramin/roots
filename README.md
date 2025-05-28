@@ -7,8 +7,7 @@ by I. Angiono, L. Vendramin
 
 Folders
 =======
-The follopwing folders contain all the exceptional braidings of diagonal type
-(that is neither Cartan nor super type): 
+The following folders contain all the exceptional braidings of diagonal type (that are neither of Cartan type nor of super type):
 
 ```
 rank2/
