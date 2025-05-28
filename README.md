@@ -142,6 +142,7 @@ superalgebra is finite. In this case, the script computes the set of positive
 roots, the odd roots and the super dimension. 
 
 ### Example: 
+Here we compute the super-dimension corresponding to $\mathfrak{gl}(2,3)$:
 ```
 gap> Read("super.g");
 gap> super("super_char3/g23.g");
@@ -165,6 +166,7 @@ The set Nabla+ is:
 Super-dimension of the contragradient Lie superalgebra g(B,p): (12|14)
 ```
 ### Example:
+We now compute the super-dimension corresponding to $\mathfrak{br}(2,5)$: 
 ```
 gap> Read("super.g");
 gap> super("super_char5/brown25.g");
