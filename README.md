@@ -1,3 +1,9 @@
+# Computing finite Weyl groupoids
+
+The repository contains the [GAP](https://www.gap-system.org) code and the database used in the paper
+
+[Computing finite Weyl groupoids]()  
+by I. Angiono, L. Vendramin  
 
 Folders
 =======
