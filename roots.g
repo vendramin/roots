@@ -2,12 +2,30 @@
 ### This script computes the root systems associated to a diagonal braiding
 ### Written by I. Angiono, L. Vendramin
 ### 
+### This is Algorithm 3.1 
+### 
+### How to use this script? 
+### 
+### To compute a root system of rank two:
+### gap> roots("rank2/ufo12b.g");
+### File: rank2/ufo12b.g
+### The braiding is:
+### [ [  -E(7)^5,  -E(7)^3 ],
+###   [        1,       -1 ] ]
+### Longest word:
+### [ 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2 ]
+### Positive roots (12):
+### [ [ 1, 0 ], [ 5, 1 ], [ 4, 1 ], [ 7, 2 ], [ 3, 1 ], [ 8, 3 ], [ 5, 2 ], [ 7, 3 ], [ 2, 1 ], [ 3, 2 ], [ 1, 1 ],
+###   [ 0, 1 ] ]
+### Cartan roots (6):
+### [ [ 1, 0 ], [ 4, 1 ], [ 3, 1 ], [ 5, 2 ], [ 2, 1 ], [ 1, 1 ] ]
+
 
 ### Bounds (global variables)
 ### These bounds are useful for computing truncated infinite root systems
 
 ### This "M" is the bound for the exponents of q_ii
-M := 5;   
+M := 7;   
 
 ### This "N" is the bound for the length of the longest word. 
 ### Use infinity for finite root systems.
@@ -96,7 +114,7 @@ roots := function(file)
   Read(file);
 
   LogTo();
-  LogTo(ReplacedString(file, ".g", ".log"));
+  LogTo(Concatenation(file, ".log"));
   
   Print("File: ", file, "\n");
   Print("The braiding is:\n");
@@ -117,14 +135,6 @@ roots := function(file)
     a := a_ij(q);
     r := s(i, a);
   
-#    Print("--\n");
-#    Display(a);
-#    Display(q);
-#    Display(i);
-#    Display(is_cartan(q, a, i));
-#    Display(TransposedMat(w)[i]);
-#    Print("--\n");
-  
     ### Is i a Cartan root?
     if is_cartan(q, a, i) then
       Add(cartan_roots, TransposedMat(w)[i]);
@@ -135,10 +145,15 @@ roots := function(file)
   
     # It suffices to check if one entry of <w> is positive
     i := First(Concatenation([1..i-1],[i+1..n]), x->ForAll(TransposedMat(w)[x], y->y>=0));
-    
+
+    if Size(l) > Maximum([N, Size(q)^2]) then
+      Print("The root system is infinite. So far I computed ", Size(l), " roots.\n");
+      return;
+    fi;  
+   
     # WARNING: To compute finite root systems one should remove 
     # the condition Size(l)>N from the following line.
-    if i = fail or Size(l)>N then
+    if i = fail then
       done := false;
     else 
       Add(pos_roots, TransposedMat(w)[i]);
@@ -150,5 +165,7 @@ roots := function(file)
   Print("Longest word:\n", l, "\n");
   Print("Positive roots (", Size(pos_roots), "):\n", pos_roots, "\n");
   Print("Cartan roots (", Size(cartan_roots), "):\n", cartan_roots, "\n");
+
+  return pos_roots;
 
 end;
