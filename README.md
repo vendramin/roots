@@ -2,7 +2,7 @@
 
 The repository contains the [GAP](https://www.gap-system.org) code and the database used in the paper
 
-[Computing finite Weyl groupoids]()  
+Computing finite Weyl groupoids  
 by I. Angiono, L. Vendramin  
 
 Folders
@@ -69,7 +69,7 @@ algebra.
 In this example, we compute the defining relations of the Nichols algebra of type $\frak{ufo}(7)a$:
 ```
 gap> Read("relations.g");
-gap> print_relations("rank2/ufo7a.g");
+gap> relations("rank2/ufo7a.g");
 #I  not logging
 The braiding is:
 [ [     -E(4),  -E(12)^7 ],
