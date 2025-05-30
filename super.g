@@ -8,7 +8,7 @@ b := [];
 p := [];
 
 ### This "M" is the bound for the exponents of q_ii
-M := 5;   
+M := 7;   
 
 
 ### This "N" is the bound for the length of the longest word. 
@@ -65,7 +65,7 @@ a_ij := function(b, p)
   local a, n, i, j, m, char;
 
   n := Size(b);
-  a := NullMat(n,n);
+  a := NullMat(n,n)-M-1;
   char := Characteristic(b);
 
   if char = 0 then
@@ -182,7 +182,7 @@ super := function(file)
   Display(b);
   
   n := Size(b);
-  N := Maximum(150, n^3);
+  N := Maximum(250, n^2);
   i := 1;
   w := IdentityMat(n, n);
   l := [1];
@@ -198,6 +198,7 @@ super := function(file)
   
   if ForAny(Cartesian([1..n],[1..n]), x->firsta[x[1]][x[2]] = infinity) then
     Print("The root system is infinite!\n");
+    return fail;
   fi;
   
   done := true;
@@ -213,6 +214,12 @@ super := function(file)
     fi;
   
     a := a_ij(b, p);
+
+    if ForAny(Flat(a), x->x <= -M) then
+      Print("The root system is infinite.\c\n");
+      return fail;
+    fi;
+ 
     if ForAny(Cartesian([1..n],[1..n]), x->a[x[1]][x[2]] = infinity) then
       Print("The root system is infinite!\n");
       Display(a);
@@ -228,18 +235,17 @@ super := function(file)
     # It suffices to check if one entry of <w> is positive
     i := First(Concatenation([1..i-1],[i+1..n]), x->ForAll(TransposedMat(w)[x], y->y>=0));
     
-    # WARNING: To compute finite root systems one should remove 
-    # the condition Size(l)>N from the following line.
-    if i = fail or Size(l)>N then
-      if Size(l)>N then
-        Print("The root system is infinite!\n");
-      fi;
+    if Size(l) > Maximum([N, Size(b)^2]) then
+      Print("The root system is infinite.\c\n");
+      return fail;
+    fi;  
+ 
+    if i = fail then
       done := false;
     else 
       Add(pos_roots, TransposedMat(w)[i]);
       Add(l, i);
     fi;
-     
   od;
   
   nabla := Union(pos_roots, 2*odd_nondegenerate);

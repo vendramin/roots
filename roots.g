@@ -55,19 +55,23 @@ convert := function(m)
   return new;
 end;
 
-### This function computes the entries of the generalized Cartan matrix associated to the braiding <q>
+### When all the entries computed are \geq -M-1, this 
+### function computes the entries of the generalized 
+### Cartan matrix associated to the braiding <q>. 
+### Otherwise, it returns a matrix with an entry 
+### equal to -M-1
 a_ij := function(q)
   local a, n, i, j, m;
 
   n := Size(q);
-  a := NullMat(n,n);
+  a := NullMat(n,n)-M-1;
 
   for i in [1..n] do
     for j in [1..n] do
       if i = j then
         a[i][j] := 2;
       else
-        ### a_ij <= M, M=5 works for finite root systems
+        ### a_ij <= M, M=7 works for finite root systems
         for m in [0..M] do
           if IsOne(q[i][i]^(m+1)) or IsOne(q[i][i]^m*q[i][j]*q[j][i]) then
             a[i][j] := -m;
@@ -134,6 +138,11 @@ roots := function(file)
   
     a := a_ij(q);
     r := s(i, a);
+
+    if ForAny(Flat(a), x->x <= -M) then
+      Print("The root system is infinite.\c\n");
+      return fail;
+    fi;
   
     ### Is i a Cartan root?
     if is_cartan(q, a, i) then
@@ -147,12 +156,10 @@ roots := function(file)
     i := First(Concatenation([1..i-1],[i+1..n]), x->ForAll(TransposedMat(w)[x], y->y>=0));
 
     if Size(l) > Maximum([N, Size(q)^2]) then
-      Print("The root system is infinite. So far I computed ", Size(l), " roots.\n");
-      return;
+      Print("The root system is infinite.\c\n");
+      return fail;
     fi;  
    
-    # WARNING: To compute finite root systems one should remove 
-    # the condition Size(l)>N from the following line.
     if i = fail then
       done := false;
     else 

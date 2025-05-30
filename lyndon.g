@@ -49,7 +49,9 @@ end;
 lyndon := function(file)
   local pos_roots;
   pos_roots := roots(file);
-  return lyndon_from_positive_roots(pos_roots);
+  if not pos_roots = fail then
+    return lyndon_from_positive_roots(pos_roots);
+  fi;
 end; 
 
 hyperwords_from_positive_roots := function(pos_roots)
@@ -77,7 +79,9 @@ end;
 hyperwords := function(file)
   local pos_roots;
   pos_roots := roots(file);
-  hyperwords_from_positive_roots(pos_roots);
+  if not pos_roots = fail then
+    hyperwords_from_positive_roots(pos_roots);
+  fi;
 end; 
 
 
