@@ -5,6 +5,8 @@ The repository contains the [GAP](https://www.gap-system.org) code and the datab
 Computing finite Weyl groupoids  
 by I. Angiono, L. Vendramin  
 
+[![DOI](https://zenodo.org/badge/827310499.svg)](https://doi.org/10.5281/zenodo.15554003)
+
 Folders
 =======
 The following folders contain all the exceptional braidings of diagonal type (that are neither of Cartan type nor of super type):
