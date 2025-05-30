@@ -38,7 +38,7 @@ of positive roots.
 
 ### Example:
 In this example, we compute the set of positive roots
-of the root system of type $\frak{ufo}(7)_a$. 
+of the root system of type $\frak{ufo}(7)a$. 
 
 ```
 gap> Read("roots.g");
@@ -66,7 +66,7 @@ roots, the dimension and the defining relations of the corresponding Nichols
 algebra.
 
 ### Example:
-In this example, we compute the defining relations of $\frak{ufo}(7)_a$:
+In this example, we compute the defining relations of the Nichols algebra of type $\frak{ufo}(7)a$:
 ```
 gap> Read("relations.g");
 gap> print_relations("rank2/ufo7a.g");
@@ -94,7 +94,7 @@ Once the set of positive roots is computed, the script computes
 the set of Lyndon words and the hyperwords. 
 
 ### Example: 
-We now compute the Lyndon words of $\frak{ufo}(7)_a$.
+We now compute the Lyndon words of the Nichols algebra of type $\frak{ufo}(7)a$.
 ```
 gap> Read("lyndon.g");
 gap> lyndon("rank2/ufo7a.g");
@@ -114,7 +114,7 @@ rec( decompositions := [ 0, 0, [ [ [ 1 ], [ 2 ] ] ], [ [ [ 1 ], [ 1, 2 ] ] ],
   words := [ [ 2 ], [ 1 ], [ 1, 2 ], [ 1, 1, 2 ], [ 1, 1, 1, 2 ] ] )
 ```
 ### Example: 
-Finally, we compute the hyperwords of $\frak{ufo}(7)_a$:
+Finally, we compute the hyperwords of the Nichols algebra of type $\frak{ufo}(7)a$:
 ```
 gap> hyperwords("rank2/ufo7a.g");
 #I  not logging
@@ -141,7 +141,7 @@ superalgebra is finite. In this case, the script computes the set of positive
 roots, the odd roots and the super dimension. 
 
 ### Example: 
-Here we compute the super-dimension corresponding to $\frak{gl}(2,3)$:
+Here we compute the superdimension corresponding to the Lie superalgebra $\frak{g}(2,3)$:
 ```
 gap> Read("super.g");
 gap> super("super_char3/g23.g");
@@ -162,10 +162,10 @@ Odd nondegenerate (1):
 The set Nabla+ is:
 [ [ 0, 0, 1 ], [ 0, 1, 0 ], [ 0, 1, 1 ], [ 0, 2, 0 ], [ 0, 2, 1 ], [ 1, 0, 0 ], [ 1, 1, 0 ], [ 1, 1, 1 ],
   [ 1, 2, 0 ], [ 1, 2, 1 ], [ 1, 3, 1 ] ]
-Super-dimension of the contragradient Lie superalgebra g(B,p): (12|14)
+superdimension of the contragradient Lie superalgebra g(B,p): (12|14)
 ```
 ### Example:
-We now compute the super-dimension corresponding to $\frak{br}(2,5)$: 
+We now compute the superdimension corresponding to the Lie superalgebra $\frak{br}(2,5)$: 
 ```
 gap> Read("super.g");
 gap> super("super_char5/brown25.g");
@@ -183,6 +183,6 @@ Odd nondegenerate (2):
 [ [ 2, 1 ], [ 1, 1 ] ]
 The set Nabla+ is:
 [ [ 0, 1 ], [ 1, 0 ], [ 1, 1 ], [ 2, 1 ], [ 2, 2 ], [ 3, 1 ], [ 3, 2 ], [ 4, 2 ], [ 4, 3 ], [ 5, 3 ] ]
-Super-dimension of the contragradient Lie superalgebra g(B,p): (10|12)
+superdimension of the contragradient Lie superalgebra g(B,p): (10|12)
 ```
 
