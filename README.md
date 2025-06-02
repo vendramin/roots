@@ -2,7 +2,7 @@
 
 The repository contains the [GAP](https://www.gap-system.org) code and the database used in the paper
 
-Computing finite Weyl groupoids  
+[Computing finite Weyl groupoids](http://arxiv.org/abs/2505.24555)  
 by I. Angiono, L. Vendramin  
 
 [![DOI](https://zenodo.org/badge/827310499.svg)](https://doi.org/10.5281/zenodo.15554003)
